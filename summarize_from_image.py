@@ -6,8 +6,8 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # Step 1: Load image and extract text
-image = Image.open("sample.png")  # Ensure sample.jpg is in the same folder
-text = pytesseract.image_to_string(image)
+image = Image.open("sample2.jpg")  # Ensure sample.jpg is in the same folder
+text = pytesseract.image_to_string(image, config='--psm 6')
 
 if not text.strip():
     print("❌ No text detected in the image.")
