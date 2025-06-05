@@ -16,11 +16,19 @@ if not text.strip():
 print("✅ OCR Extracted Text:\n")
 print(text)
 
-# Step 2: Prepare prompt for Mistral
-prompt = f"Summarize the following text:\n{text}"
+# ✅ Step 2: Clean repeated lines before summarization
+lines = text.splitlines()
+unique_lines = []
+for line in lines:
+    line = line.strip()
+    if line and (not unique_lines or line != unique_lines[-1]):
+        unique_lines.append(line)
 
-# Step 3: Send to Mistral using Ollama (via subprocess)
-print("\n🧠 Sending to Mistral for summarization...\n")
+cleaned_text = "\n".join(unique_lines)
+
+# Step 3: Prepare prompt for Mistral
+prompt = f"Summarize the following text:\n{cleaned_text}"
+
 
 try:
     result = subprocess.run(
