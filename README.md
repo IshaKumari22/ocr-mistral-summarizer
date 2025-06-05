@@ -24,6 +24,8 @@ A Python project that extracts text from images using Tesseract OCR and summariz
 ## 🧪 Sample Output
 **OCR Output:**
 ![OCR and Mistral Output](https://raw.githubusercontent.com/IshaKumari22/ocr-mistral-summarizer/main/ocr_output.png)
+![OCR Summary Output](https://raw.githubusercontent.com/IshaKumari22/ocr-mistral-summarizer/main/ocr_summary_output.png)
+
 
 
 
